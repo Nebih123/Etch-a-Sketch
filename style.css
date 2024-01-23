@@ -1,12 +1,79 @@
-.pixels {
-    width: 15px;
-    height: 15px;
-    background-color: lightblue;
-}
-
-body {
+body {    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+h2 {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.pixels {
+    width: 15px;
+    height: 15px;
+    background-color: whitesmoke;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 3px;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    border-radius: 3px;
+
+}
+
+button#black {
+    background-color: #161616;
+    color: white;
+}
+
+button#white {
+    background-color: #fff;
+    color: #333;
+}
+
+button#random {
+    background-color: #3498db;
+    color: white;
+}
+
+button#rainbow {
+    background-color: #f39c12;
+    color: white;
 }
