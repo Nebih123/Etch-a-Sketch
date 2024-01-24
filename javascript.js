@@ -4,9 +4,10 @@ let blackColor = document.querySelector('#black')
 let randomColor = document.querySelector('#random')
 let rainbowColor = document.querySelector('#rainbow')
 let clearButton = document.querySelector('#clear')
+container.style.cssText = `width: 289px;display: flex; flex-wrap: wrap`
+
 let chose = false
 let color = "black"
-container.style.cssText = `width: 289px;display: flex; flex-wrap: wrap`
 let ngjyra;
 let div;
 
@@ -29,16 +30,15 @@ function blackColorFunction() {
     })
 }
 
-
 randomColor.addEventListener("click", function() {
-    let num1 = parseInt(Math.random() * 50)
-    let num2 = parseInt(Math.random() * 100)
-    let num3 = parseInt(Math.random() * 150)
-    color = `rgb(${num1},${num2},${num3})`
+    multiColor()
     chose = false
 })
 
-rainbowColor.addEventListener("click", multiColor)
+rainbowColor.addEventListener("click", function() {
+    multiColor()
+    chose = true
+})
 
 pixels.forEach(function (element) {
     element.addEventListener("mouseover", function (event) {
@@ -53,18 +53,17 @@ pixels.forEach(function (element) {
     })
 })
 
-
 clearButton.addEventListener("click", function() {
     clearSketch();
 });
 
 function multiColor() {
-    let num1 = parseInt(Math.random() * 100)
-    let num2 = parseInt(Math.random() * 100)
-    let num3 = parseInt(Math.random() * 100)
+    const num1 = Math.floor(Math.random() * 256);
+    const num2 = Math.floor(Math.random() * 256);
+    const num3 = Math.floor(Math.random() * 256);
     color = `rgb(${num1},${num2},${num3})`
-    chose = true
 }
+
 function paint() {
     pixels.forEach(function (element) {
         element.addEventListener("mouseover", function (event) {
@@ -73,10 +72,8 @@ function paint() {
     })
 }
 
-
 function clearSketch() {
     pixels.forEach(function(element) {
         element.style.backgroundColor = 'whitesmoke';
     })
 }
-
