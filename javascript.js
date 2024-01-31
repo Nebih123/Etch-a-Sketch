@@ -44,7 +44,6 @@ let mouse = "mouseover"
 
 pixels.forEach(function (element) {
     element.addEventListener( mouse , function (event) {
-        console.log(mouse)
         if (chose == true) {
             multiColor()
             event.target.style.backgroundColor = `${color}`
@@ -80,33 +79,3 @@ function clearSketch() {
         element.style.backgroundColor = 'whitesmoke';
     })
 }
-
-function checkWidth() {
-    var windowWidth = window.innerWidth;
-    var specifiedWidth = 600;
-
-    if (windowWidth <= specifiedWidth) {
-        phoneFunction();
-    } else {
-        mouse = "mouseover";
-    }
-}
-
-function phoneFunction() {
-    mouse = "touchstart";
-}
-
-pixels.forEach(function (element) {
-    element.addEventListener(mouse, function (event) {
-        if (chose == true) {
-            multiColor();
-            event.target.style.backgroundColor = `${color}`;
-        } else if (chose == false) {
-            blackColorFunction();
-            event.target.style.backgroundColor = `${color}`;
-        }
-    });
-});
-
-window.addEventListener("resize", checkWidth);
-checkWidth();
