@@ -40,8 +40,11 @@ rainbowColor.addEventListener("click", function() {
     chose = true
 })
 
+let mouse = "mouseover"
+
 pixels.forEach(function (element) {
-    element.addEventListener("mouseover", function (event) {
+    element.addEventListener( "touchstart" , function (event) {
+        console.log(mouse)
         if (chose == true) {
             multiColor()
             event.target.style.backgroundColor = `${color}`
@@ -66,7 +69,7 @@ function multiColor() {
 
 function paint() {
     pixels.forEach(function (element) {
-        element.addEventListener("mouseover", function (event) {
+        element.addEventListener( "touchstart", function (event) {
             event.target.style.backgroundColor = `${color}`
         })
     })
@@ -77,3 +80,22 @@ function clearSketch() {
         element.style.backgroundColor = 'whitesmoke';
     })
 }
+
+function checkWidth() {
+    var windowWidth = window.innerWidth;
+    var specifiedWidth = 600;
+
+    if (windowWidth <= specifiedWidth) {
+      phoneFunction();
+    }
+  }
+  
+  function phoneFunction() {
+    console.log("123")
+    mouse = "touchstart"
+}
+  
+  window.addEventListener("resize", checkWidth);
+  
+  checkWidth();
+  
