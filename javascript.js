@@ -86,16 +86,27 @@ function checkWidth() {
     var specifiedWidth = 600;
 
     if (windowWidth <= specifiedWidth) {
-      phoneFunction();
+        phoneFunction();
+    } else {
+        mouse = "mouseover";
     }
-  }
-  
-  function phoneFunction() {
-    console.log("123")
-    mouse = "touchmove"
 }
-  
-  window.addEventListener("resize", checkWidth);
-  
-  checkWidth();
-  
+
+function phoneFunction() {
+    mouse = "touchstart";
+}
+
+pixels.forEach(function (element) {
+    element.addEventListener(mouse, function (event) {
+        if (chose == true) {
+            multiColor();
+            event.target.style.backgroundColor = `${color}`;
+        } else if (chose == false) {
+            blackColorFunction();
+            event.target.style.backgroundColor = `${color}`;
+        }
+    });
+});
+
+window.addEventListener("resize", checkWidth);
+checkWidth();
