@@ -43,7 +43,7 @@ rainbowColor.addEventListener("click", function() {
 let mouse = "mouseover"
 
 pixels.forEach(function (element) {
-    element.addEventListener( "touchstart" , function (event) {
+    element.addEventListener( mouse , function (event) {
         console.log(mouse)
         if (chose == true) {
             multiColor()
@@ -69,7 +69,7 @@ function multiColor() {
 
 function paint() {
     pixels.forEach(function (element) {
-        element.addEventListener( "touchstart", function (event) {
+        element.addEventListener( mouse, function (event) {
             event.target.style.backgroundColor = `${color}`
         })
     })
@@ -92,7 +92,7 @@ function checkWidth() {
   
   function phoneFunction() {
     console.log("123")
-    mouse = "touchstart"
+    mouse = "touchmove"
 }
   
   window.addEventListener("resize", checkWidth);
